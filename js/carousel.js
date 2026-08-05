@@ -22,7 +22,7 @@ class Carousel {
                 Carousel._sequence = 0;
                 Carousel._size = arr.length;
                 Carousel.Next(); //start
-                Carousel._interval = setInterval(function(){ Carousel.Next(); },5000);
+                Carousel._interval = setInterval(function(){ Carousel.Next(); },2000);
             }
             
         } else {
@@ -34,13 +34,17 @@ class Carousel {
         let carroAgora = carouselArr[Carousel._sequence];
 
         let divCarousel = document.getElementById("carousel");
-
-        divCarousel.style.backgroundImage = `url('img/${carroAgora.image}')`;
+        
+        divCarousel.innerHTML = `<img src="img/${carroAgora.image}" alt="${carroAgora.title}">`;
 
         let divcarouselTitle = document.getElementById("carousel-title");
 
         divcarouselTitle.innerHTML = `<a href="${carroAgora.url}">${carroAgora.title}</a>`;
 
         Carousel._sequence++;
+
+        if (Carousel._sequence >= Carousel._size) {
+        Carousel._sequence = 0;
+}
     }
 };
