@@ -8,8 +8,12 @@ let carouselArr = [];
 
 //class Carousel
 class Carousel {
+    constructor(image, title, url){
+        this.image = image;
+        this.title = title;
+        this.url = url;
 
-    
+    }
       
     static Start(arr){
         if(arr){
@@ -27,6 +31,16 @@ class Carousel {
     }
 
     static Next(){
-        
+        let carroAgora = carouselArr[Carousel._sequence];
+
+        let divCarousel = document.getElementById("carousel");
+
+        divCarousel.style.backgroundImage = `url('img/${carroAgora.image}')`;
+
+        let divcarouselTitle = document.getElementById("carousel-title");
+
+        divcarouselTitle.innerHTML = `<a href="${carroAgora.url}">${carroAgora.title}</a>`;
+
+        Carousel._sequence++;
     }
 };
