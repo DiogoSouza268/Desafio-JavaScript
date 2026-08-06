@@ -59,6 +59,11 @@ table {
     padding: 8px;
   }
 
+  td > img{
+    object-fit: cover;
+    width: 62%;
+  }
+
   td:nth-child(1) {  
     font-weight: 700;
     width: 40%;
