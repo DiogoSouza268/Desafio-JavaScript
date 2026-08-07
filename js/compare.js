@@ -75,9 +75,9 @@ function UpdateCompareTable() {
     let carro2 = carArr[1];
 
     let image = document.getElementById("compare_image_0")
-    image.innerHTML = `<img src="${carro1.image}" alt="${carro1.nome}">`
+    image.innerHTML = `<img src="${carro1.image}" alt="${carro1.nome}" width="80%">`
     let image2 = document.getElementById("compare_image_1")
-    image2.innerHTML = `<img src="${carro2.image}" alt="${carro2.nome}">`
+    image2.innerHTML = `<img src="${carro2.image}" alt="${carro2.nome}" width="80%">`
 
     let nome = document.getElementById("compare_modelo_0")
     nome.innerHTML = `<p>${carro1.nome}</p>`
