@@ -59,6 +59,10 @@ table {
     padding: 8px;
   }
 
+  td > img{
+    width: 80%;
+  }
+
   td:nth-child(1) {  
     font-weight: 700;
     width: 40%;

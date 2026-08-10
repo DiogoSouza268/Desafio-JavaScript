@@ -71,64 +71,44 @@ function HideCompare(){
 }
 
 function UpdateCompareTable() {
-    let carro1 = carArr[0];
-    let carro2 = carArr[1];
 
-    let image = document.getElementById("compare_image_0")
-    image.innerHTML = `<img src="${carro1.image}" alt="${carro1.nome}" width="80%">`
-    let image2 = document.getElementById("compare_image_1")
-    image2.innerHTML = `<img src="${carro2.image}" alt="${carro2.nome}" width="80%">`
+    let i = 0;
 
-    let nome = document.getElementById("compare_modelo_0")
-    nome.innerHTML = `<p>${carro1.nome}</p>`
-    let nome2 = document.getElementById("compare_modelo_1")
-    nome2.innerHTML = `<p>${carro2.nome}</p>`
+    while(i < carArr.length){
 
-    let alturaCacamba = document.getElementById("compare_alturacacamba_0")
-    alturaCacamba.innerHTML = `<p>${carro1.alturaCacamba} mm</p>`
-    let alturaCacamba2 = document.getElementById("compare_alturacacamba_1")
-    alturaCacamba2.innerHTML = `<p>${carro2.alturaCacamba} mm</p>`
+        let foto_veiculo = document.getElementById(`compare_image_${i}`);
+        foto_veiculo.innerHTML = `<img src="${carArr[i].image}" alt="${carArr[i].nome}">`
 
-    let alturaVeiculo = document.getElementById("compare_alturaveiculo_0")
-    alturaVeiculo.innerHTML = `<p>${carro1.alturaVeiculo} mm</p>`
-    let alturaVeiculo2 = document.getElementById("compare_alturaveiculo_1")
-    alturaVeiculo2.innerHTML = `<p>${carro2.alturaVeiculo} mm</p>`
+        let modelo_veiculo = document.getElementById(`compare_modelo_${i}`);
+        modelo_veiculo.innerHTML = `<p>${carArr[i].nome}</p>`
 
-    let alturaSolo = document.getElementById("compare_alturasolo_0")
-    alturaSolo.innerHTML = `<p>${carro1.alturaSolo} mm</p>`
-    let alturaSolo2 = document.getElementById("compare_alturasolo_1")
-    alturaSolo2.innerHTML = `<p>${carro2.alturaSolo} mm</p>`
+        let alturaCacamba_veiculo = document.getElementById(`compare_alturacacamba_${i}`);
+        alturaCacamba_veiculo.innerHTML = `<p>${carArr[i].alturaCacamba} mm</p>`
 
-    let capacidadeCarga = document.getElementById("compare_capacidadecarga_0")
-    capacidadeCarga.innerHTML = `<p>${carro1.capacidadeCarga} Kg</p>`
-    let capacidadeCarga2 = document.getElementById("compare_capacidadecarga_1")
-    capacidadeCarga2.innerHTML = `<p>${carro2.capacidadeCarga} Kg</p>`
+        let alturaVeiculo_veiculo = document.getElementById(`compare_alturaveiculo_${i}`);
+        alturaVeiculo_veiculo.innerHTML = `<p>${carArr[i].alturaVeiculo} mm</p>`
 
-    let motor = document.getElementById("compare_motor_0")
-    motor.innerHTML = `<p>${carro1.motor} L</p>`
-    let motor2 = document.getElementById("compare_motor_1")
-    motor2.innerHTML = `<p>${carro2.motor} L</p>`
+        let alturaSolo_veiculo = document.getElementById(`compare_alturasolo_${i}`);
+        alturaSolo_veiculo.innerHTML = `<p>${carArr[i].alturaSolo} mm</p>`
 
-    let potencia = document.getElementById("compare_potencia_0")
-    potencia.innerHTML = `<p>${carro1.potencia} cv</p>`
-    let potencia2 = document.getElementById("compare_potencia_1")
-    potencia2.innerHTML = `<p>${carro2.potencia} cv</p>`
+        let capacidadeCarga_veiculo = document.getElementById(`compare_capacidadecarga_${i}`);
+        capacidadeCarga_veiculo.innerHTML = `<p>${carArr[i].capacidadeCarga} Kg</p>`
 
-    let volumeCacamba = document.getElementById("compare_volumecacamba_0")
-    volumeCacamba.innerHTML = `<p>${carro1.volumeCacamba} L</p>`
-    let volumeCacamba2 = document.getElementById("compare_volumecacamba_1")
-    volumeCacamba2.innerHTML = `<p>${carro2.volumeCacamba} L</p>`
+        let motor_veiculo = document.getElementById(`compare_motor_${i}`);
+        motor_veiculo.innerHTML = `<p>${carArr[i].motor} L</p>`
 
-    let roda = document.getElementById("compare_roda_0")
-    roda.innerHTML = `<p>${carro1.roda}</p>`
-    let roda2 = document.getElementById("compare_roda_1")
-    roda2.innerHTML = `<p>${carro2.roda}</p>`
+        let potencia_veiculo = document.getElementById(`compare_potencia_${i}`);
+        potencia_veiculo.innerHTML = `<p>${carArr[i].potencia} cv</p>`
 
-    let preco = document.getElementById("compare_preco_0")
-    preco.innerHTML = `<p>R$ ${carro1.preco}</p>`
-    let preco2 = document.getElementById("compare_preco_1")
-    preco2.innerHTML = `<p>R$ ${carro2.preco}</p>`
+        let volumeCacamba_veiculo = document.getElementById(`compare_volumecacamba_${i}`);
+        volumeCacamba_veiculo.innerHTML = `<p>${carArr[i].volumeCacamba} L</p>`
 
-    
+        let roda_veiculo = document.getElementById(`compare_roda_${i}`);
+        roda_veiculo.innerHTML = `<p>${carArr[i].roda}</p>`
 
+        let preco_veiculo = document.getElementById(`compare_preco_${i}`);
+        preco_veiculo.innerHTML = `<p>R$ ${carArr[i].preco.toLocaleString('pt-BR')}</p>`
+
+        i++;
+    }
 }
