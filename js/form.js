@@ -15,6 +15,10 @@ class contato {
 
 function Post(form) {
 
+    
+
+    
+
   let data = new contato(form.elements.namedItem("nome").value,
             form.elements.namedItem("sobrenome").value, 
             form.elements.namedItem("email").value, 
@@ -28,10 +32,20 @@ function Post(form) {
 
 function Enviar() {
 
-    var nome = document.getElementById("nomeid");
+    let verificaCheckbox = document.getElementById("Termos1");
 
-    if (nome.value != "") {
+    if(!verificaCheckbox.checked){
+        alert('Os dados serão enviado apenas se concordar com os termos');
+        return false;
+
+    } else{
+
+        var nome = document.getElementById("nomeid");
+
+        if (nome.value != "") {
         alert('Obrigado sr(a) ' + nome.value + ' os seus dados foram encaminhados com sucesso');
-    }
+        }
 
+    }
 }
+
